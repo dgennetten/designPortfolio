@@ -94,7 +94,7 @@ const Bio: React.FC = () => {
           
           <div className="flex justify-center space-x-6">
             <a
-              href="mailto:darren@example.com"
+              href="mailto:darren@gennetten.com"
               className="group flex items-center space-x-3 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
             >
               <Mail size={20} />
