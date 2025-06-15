@@ -117,7 +117,7 @@ const Modal: React.FC<ModalProps> = ({
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 z-10 p-3 bg-gray-200/40 hover:bg-gray-300/60 rounded-full text-white transition-all duration-200 backdrop-blur-sm"
+        className="absolute top-6 right-6 z-10 p-2 bg-white/30 hover:bg-white/50 rounded-full text-gray-800 transition-all duration-200 backdrop-blur-sm"
       >
         <X size={24} />
       </button>
@@ -129,7 +129,7 @@ const Modal: React.FC<ModalProps> = ({
             e.stopPropagation();
             handlePrevious();
           }}
-          className="absolute left-6 top-1/2 -translate-y-1/2 z-10 p-3 bg-gray-200/40 hover:bg-gray-300/60 rounded-full text-white transition-all duration-200 backdrop-blur-sm"
+          className="absolute left-6 top-1/2 -translate-y-1/2 z-10 p-2 bg-white/30 hover:bg-white/50 rounded-full text-gray-800 transition-all duration-200 backdrop-blur-sm"
         >
           <ChevronLeft size={24} />
         </button>
@@ -142,7 +142,7 @@ const Modal: React.FC<ModalProps> = ({
             e.stopPropagation();
             handleNext();
           }}
-          className="absolute right-6 top-1/2 -translate-y-1/2 z-10 p-3 bg-gray-200/40 hover:bg-gray-300/60 rounded-full text-white transition-all duration-200 backdrop-blur-sm"
+          className="absolute right-6 top-1/2 -translate-y-1/2 z-10 p-2 bg-white/30 hover:bg-white/50 rounded-full text-gray-800 transition-all duration-200 backdrop-blur-sm"
         >
           <ChevronRight size={24} />
         </button>
@@ -223,3 +223,4 @@ const Modal: React.FC<ModalProps> = ({
 };
 
 export default Modal;
+
