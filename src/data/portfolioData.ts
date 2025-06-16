@@ -14,88 +14,88 @@ export const portfolioItems: PortfolioItem[] = [
   // Photographs
   {
     id: 'photo-1',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 1',
+    description: 'Desc Photo 1',
     thumbnail: '/images/Photography/photography1.jpg',
     fullImage: '/images/Photography/photography1.jpg',
     category: 'photographs'
   },
   {
     id: 'photo-2',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 2',
+    description: 'Desc Photo 2',
     thumbnail: '/images/Photography/photography2.jpg',
     fullImage: '/images/Photography/photography2.jpg',
     category: 'photographs'
   },
   {
     id: 'photo-3',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 3',
+    description: 'Desc Photo 3',
     thumbnail: '/images/Photography/photography3.jpg',
     fullImage: '/images/Photography/photography3.jpg',
     category: 'photographs'
   },
   {
     id: 'photo-4',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 4',
+    description: 'Desc Photo 4',
     thumbnail: '/images/Photography/photography4.jpg',
     fullImage: '/images/Photography/photography4.jpg',
     category: 'photographs'
   },
    {
     id: 'photo-5',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 5',
+    description: 'Desc Photo 5',
     thumbnail: '/images/Photography/photography5.jpg',
     fullImage: '/images/Photography/photography5.jpg',
     category: 'photographs'
   },
     {
     id: 'photo-6',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 6',
+    description: 'Desc Photo 6',
     thumbnail: '/images/Photography/photography6.jpg',
     fullImage: '/images/Photography/photography6.jpg',
     category: 'photographs'
   },
     {
     id: 'photo-7',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 7',
+    description: 'Desc Photo 7',
     thumbnail: '/images/Photography/photography7.jpg',
     fullImage: '/images/Photography/photography7.jpg',
     category: 'photographs'
   },
    {
     id: 'photo-8',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 8',
+    description: 'Desc Photo 8',
     thumbnail: '/images/Photography/photography8.jpg',
     fullImage: '/images/Photography/photography8.jpg',
     category: 'photographs'
   },
    {
     id: 'photo-9',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 9',
+    description: 'Desc Photo 9',
     thumbnail: '/images/Photography/photography9.jpg',
     fullImage: '/images/Photography/photography9.jpg',
     category: 'photographs'
   },
    {
     id: 'photo-10',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 10',
+    description: 'Desc Photo 10',
     thumbnail: '/images/Photography/photography10.jpg',
     fullImage: '/images/Photography/photography10.jpg',
     category: 'photographs'
   },
    {
     id: 'photo-11',
-    name: 'Urban Architecture',
-    description: 'Capturing the interplay of light and shadow in modern urban architecture.',
+    name: 'Name of Photo 11',
+    description: 'Desc Photo 11',
     thumbnail: '/images/Photography/photography11.jpg',
     fullImage: '/images/Photography/photography11.jpg',
     category: 'photographs'
@@ -122,16 +122,16 @@ export const portfolioItems: PortfolioItem[] = [
       '/images/Projects/Abbott/VirusHunters_lockup_926x926.jpg',
     ],
     projectImageDescriptions: [
-      'Primary logo design with clean typography and modern aesthetic',
-      'Brand color palette and typography system showcasing versatility',
-      'Marketing materials including business cards and letterhead design',
-      'test',
-      'test',
-      'test',
-      'test',
-      'test',
-      'test',
-      'test',
+      'desc 1',
+      'desc 2',
+      'desc 3',
+      'desc 4',
+      'desc 5',
+      'desc 6',
+      'desc 7',
+      'desc 8',
+      'desc 9',
+      'desc 10',
     ]
   },
   {
@@ -149,11 +149,11 @@ export const portfolioItems: PortfolioItem[] = [
       '/images/Projects/LuminaryBrewingIdentity/identity5.jpg',
     ],
     projectImageDescriptions: [
-      'Homepage design featuring hero section and intuitive navigation',
-      'Mobile-responsive layout with optimized user experience',
-      'Final implementation showcasing cross-device compatibility',
-      'Final implementation showcasing cross-device compatibility',
-      'Final implementation showcasing cross-device compatibility',
+      'Lum desc 1',
+      'Lum desc 2',
+      'Lum desc 3',
+      'Lum desc 4',
+      'Lum desc 5',
     ]
   }
 ];

@@ -16,22 +16,15 @@ const Bio: React.FC = () => {
           <div className="order-2 md:order-1">
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                With over 5 years of experience in graphic design and visual storytelling, 
-                I specialize in creating compelling brand identities, striking photography, 
-                and innovative design solutions.
+               This is paragraph 1 of the bio... 
               </p>
               
               <p className="text-gray-600 leading-relaxed mb-6">
-                My approach combines strategic thinking with creative execution, ensuring 
-                that every project not only looks beautiful but also serves its intended 
-                purpose effectively. I believe in the power of design to communicate, 
-                inspire, and transform.
+               This is paragraph 2 of the bio...
               </p>
 
               <p className="text-gray-600 leading-relaxed">
-                When I'm not designing, you can find me exploring new photography techniques, 
-                studying the latest design trends, or collaborating with other creatives 
-                to push the boundaries of visual communication.
+               This is paragraph 3 of the bio...
               </p>
             </div>
           </div>
