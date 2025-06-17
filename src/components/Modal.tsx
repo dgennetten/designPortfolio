@@ -176,18 +176,22 @@ const Modal: React.FC<ModalProps> = ({
                   <h3 className="text-lg font-medium text-white mb-1">
                     {item.name}
                   </h3>
-                  <p className="text-white/90 leading-snug text-sm">
-                    {getCurrentDescription()}
-                  </p>
-                  {item.category === 'design-projects' && item.projectImages && (
-                    <div className="mt-2 text-xs text-white/70">
-                      Image {currentImageIndex + 1} of {totalProjectImages}
-                    </div>
-                  )}
-                  {item.category !== 'design-projects' && (
-                    <div className="mt-2 text-xs text-white/70">
-                      {currentIndex + 1} of {totalItems}
-                    </div>
+                  {item.category !== 'photographs' && (
+                    <>
+                      <p className="text-white/90 leading-snug text-sm">
+                        {getCurrentDescription()}
+                      </p>
+                      {item.category === 'design-projects' && item.projectImages && (
+                        <div className="mt-2 text-xs text-white/70">
+                          Image {currentImageIndex + 1} of {totalProjectImages}
+                        </div>
+                      )}
+                      {item.category !== 'design-projects' && (
+                        <div className="mt-2 text-xs text-white/70">
+                          {currentIndex + 1} of {totalItems}
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
@@ -200,18 +204,22 @@ const Modal: React.FC<ModalProps> = ({
                 <h3 className="text-lg font-medium text-white mb-1">
                   {item.name}
                 </h3>
-                <p className="text-white/90 leading-snug text-sm">
-                  {getCurrentDescription()}
-                </p>
-                {item.category === 'design-projects' && item.projectImages && (
-                  <div className="mt-2 text-xs text-white/70">
-                    Image {currentImageIndex + 1} of {totalProjectImages}
-                  </div>
-                )}
-                {item.category !== 'design-projects' && (
-                  <div className="mt-2 text-xs text-white/70">
-                    {currentIndex + 1} of {totalItems}
-                  </div>
+                {item.category !== 'photographs' && (
+                  <>
+                    <p className="text-white/90 leading-snug text-sm">
+                      {getCurrentDescription()}
+                    </p>
+                    {item.category === 'design-projects' && item.projectImages && (
+                      <div className="mt-2 text-xs text-white/70">
+                        Image {currentImageIndex + 1} of {totalProjectImages}
+                      </div>
+                    )}
+                    {item.category !== 'design-projects' && (
+                      <div className="mt-2 text-xs text-white/70">
+                        {currentIndex + 1} of {totalItems}
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             </div>
