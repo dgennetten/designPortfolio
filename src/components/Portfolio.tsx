@@ -50,9 +50,11 @@ const Portfolio: React.FC<PortfolioProps> = ({ items, category, onItemClick }) =
                 <h3 className="text-xl font-medium text-gray-900 mb-2 group-hover:text-gray-600 transition-colors">
                   {item.name}
                 </h3>
-                <p className="text-gray-600 line-clamp-2 leading-relaxed">
-                  {item.description}
-                </p>
+                {category !== 'photographs' && (
+                  <p className="text-gray-600 line-clamp-2 leading-relaxed">
+                    {item.description}
+                  </p>
+                )}
               </div>
             </div>
           ))}
