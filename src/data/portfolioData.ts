@@ -5,7 +5,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 'logo-1',
     name: 'Luminary Brewing',
-    description: 'Bottle cap logo for Luminary Brewing',
+    description: 'Logo for Luminary Brewing',
     thumbnail: '/images/Logos/LuminaryLogo.jpg',
     fullImage: '/images/Logos/lumbrewlogo.jpg',
     category: 'logos'
@@ -14,7 +14,7 @@ export const portfolioItems: PortfolioItem[] = [
   // Photographs
   {
     id: 'photo-1',
-    name: 'Name of Photo 1',
+    name: 'Person Waiting at the Bus Stop Outside the Rainbo Club',
     description: 'Desc Photo 1',
     thumbnail: '/images/Photography/photography1.jpg',
     fullImage: '/images/Photography/photography1.jpg',
@@ -22,7 +22,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'photo-2',
-    name: 'Name of Photo 2',
+    name: 'Chase Tower in the Fog',
     description: 'Desc Photo 2',
     thumbnail: '/images/Photography/photography2.jpg',
     fullImage: '/images/Photography/photography2.jpg',
@@ -30,7 +30,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'photo-3',
-    name: 'Name of Photo 3',
+    name: 'Table Runner',
     description: 'Desc Photo 3',
     thumbnail: '/images/Photography/photography3.jpg',
     fullImage: '/images/Photography/photography3.jpg',
@@ -38,7 +38,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 'photo-4',
-    name: 'Name of Photo 4',
+    name: 'Early Morning Haze from the Green Line',
     description: 'Desc Photo 4',
     thumbnail: '/images/Photography/photography4.jpg',
     fullImage: '/images/Photography/photography4.jpg',
@@ -46,7 +46,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
    {
     id: 'photo-5',
-    name: 'Name of Photo 5',
+    name: 'Alley Light',
     description: 'Desc Photo 5',
     thumbnail: '/images/Photography/photography5.jpg',
     fullImage: '/images/Photography/photography5.jpg',
@@ -54,7 +54,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
     {
     id: 'photo-6',
-    name: 'Name of Photo 6',
+    name: 'Packed In',
     description: 'Desc Photo 6',
     thumbnail: '/images/Photography/photography6.jpg',
     fullImage: '/images/Photography/photography6.jpg',
@@ -62,7 +62,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
     {
     id: 'photo-7',
-    name: 'Name of Photo 7',
+    name: 'Yellow',
     description: 'Desc Photo 7',
     thumbnail: '/images/Photography/photography7.jpg',
     fullImage: '/images/Photography/photography7.jpg',
@@ -70,7 +70,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
    {
     id: 'photo-8',
-    name: 'Name of Photo 8',
+    name: 'Graffiti',
     description: 'Desc Photo 8',
     thumbnail: '/images/Photography/photography8.jpg',
     fullImage: '/images/Photography/photography8.jpg',
@@ -78,7 +78,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
    {
     id: 'photo-9',
-    name: 'Name of Photo 9',
+    name: 'Window Panes',
     description: 'Desc Photo 9',
     thumbnail: '/images/Photography/photography9.jpg',
     fullImage: '/images/Photography/photography9.jpg',
@@ -86,7 +86,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
    {
     id: 'photo-10',
-    name: 'Name of Photo 10',
+    name: 'Watching Over',
     description: 'Desc Photo 10',
     thumbnail: '/images/Photography/photography10.jpg',
     fullImage: '/images/Photography/photography10.jpg',
@@ -94,7 +94,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
    {
     id: 'photo-11',
-    name: 'Name of Photo 11',
+    name: 'Crane in the Yellow Sky',
     description: 'Desc Photo 11',
     thumbnail: '/images/Photography/photography11.jpg',
     fullImage: '/images/Photography/photography11.jpg',
