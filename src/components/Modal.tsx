@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Square, Minus } from 'lucide-react';
 import { PortfolioItem } from '../types';
 
 interface ModalProps {
@@ -34,11 +34,16 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
   const [isPortrait, setIsPortrait] = useState<boolean | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [fullScreen, setFullScreen] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     setIsPortrait(null);
     setImageLoaded(false);
+    // Only reset full screen when opening/closing the modal, not when navigating
+    if (!isOpen) {
+      setFullScreen(false);
+    }
   }, [item, currentImageIndex, isOpen]);
 
   const handleImageLoad = () => {
@@ -51,7 +56,13 @@ const Modal: React.FC<ModalProps> = ({
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        if (fullScreen) {
+          setFullScreen(false);
+        } else {
+          onClose();
+        }
+      }
     };
 
     const handleArrowKeys = (e: KeyboardEvent) => {
@@ -65,18 +76,27 @@ const Modal: React.FC<ModalProps> = ({
       }
     };
 
+    const handleFullScreen = (e: KeyboardEvent) => {
+      if (e.key === 'f' || e.key === 'F') {
+        e.preventDefault();
+        setFullScreen(!fullScreen);
+      }
+    };
+
     if (isOpen) {
       document.addEventListener('keydown', handleEscape);
       document.addEventListener('keydown', handleArrowKeys);
+      document.addEventListener('keydown', handleFullScreen);
       document.body.style.overflow = 'hidden';
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscape);
       document.removeEventListener('keydown', handleArrowKeys);
+      document.removeEventListener('keydown', handleFullScreen);
       document.body.style.overflow = 'unset';
     };
-  }, [isOpen, onClose, onPrevious, onNext, onPreviousImage, onNextImage, currentIndex, totalItems, currentImageIndex, totalProjectImages, item?.category]);
+  }, [isOpen, onClose, onPrevious, onNext, onPreviousImage, onNextImage, currentIndex, totalItems, currentImageIndex, totalProjectImages, item?.category, fullScreen]);
 
   if (!isOpen || !item) return null;
 
@@ -103,23 +123,43 @@ const Modal: React.FC<ModalProps> = ({
   const handlePrevious = item.category === 'design-projects' ? onPreviousImage : onPrevious;
   const handleNext = item.category === 'design-projects' ? onNextImage : onNext;
 
-  const imageMaxHeight = isPortrait === null
-    ? `calc(100vh - ${MODAL_MARGIN}px)`
-    : isPortrait
+  const imageMaxHeight = fullScreen 
+    ? '100vh'
+    : isPortrait === null
       ? `calc(100vh - ${MODAL_MARGIN}px)`
-      : `calc(100vh - ${MODAL_MARGIN + CAPTION_HEIGHT}px)`;
+      : isPortrait
+        ? `calc(100vh - ${MODAL_MARGIN}px)`
+        : `calc(100vh - ${MODAL_MARGIN + CAPTION_HEIGHT}px)`;
 
   return (
     <div 
       className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 overflow-y-auto"
-      onClick={onClose}
+      onClick={(e) => {
+        // Only close if clicking on the background, not on buttons or content
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
     >
       {/* Close Button */}
       <button
         onClick={onClose}
         className="absolute top-6 right-6 z-10 p-2 bg-white/30 hover:bg-white/50 rounded-full text-gray-800 transition-all duration-200 backdrop-blur-sm"
+        style={{ right: fullScreen ? '60px' : '60px' }}
       >
         <X size={24} />
+      </button>
+
+      {/* Full Screen Toggle Button */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setFullScreen(!fullScreen);
+        }}
+        className="absolute top-6 right-6 z-10 p-2 bg-white/30 hover:bg-white/50 rounded-full text-gray-800 transition-all duration-200 backdrop-blur-sm"
+        style={{ right: fullScreen ? '6px' : '120px' }}
+      >
+        {fullScreen ? <Minus size={24} /> : <Square size={24} />}
       </button>
 
       {/* Previous Button */}
@@ -152,6 +192,7 @@ const Modal: React.FC<ModalProps> = ({
       <div 
         className="max-w-5xl w-full flex flex-col items-center my-8"
         onClick={(e) => e.stopPropagation()}
+        style={{ margin: fullScreen ? '0' : undefined }}
       >
         <div className="flex flex-col items-center w-full">
           <div className="relative w-full flex justify-center">
@@ -166,11 +207,13 @@ const Modal: React.FC<ModalProps> = ({
                 maxWidth: '100%',
                 width: 'auto',
                 height: 'auto',
-                display: 'block'
+                display: 'block',
+                borderRadius: fullScreen ? '0' : undefined,
+                boxShadow: fullScreen ? 'none' : undefined
               }}
             />
             {/* Portrait: Overlay caption */}
-            {imageLoaded && isPortrait && (
+            {!fullScreen && imageLoaded && isPortrait && (
               <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-full max-w-2xl px-2 pointer-events-none">
                 <div className="bg-white/30 backdrop-blur-md rounded-b-lg p-2 border-t border-white/10 shadow-xl pointer-events-auto">
                   <h3 className="text-lg font-medium text-white mb-1">
@@ -198,7 +241,7 @@ const Modal: React.FC<ModalProps> = ({
             )}
           </div>
           {/* Landscape: Caption below image */}
-          {imageLoaded && isPortrait === false && (
+          {!fullScreen && imageLoaded && isPortrait === false && (
             <div className="w-full max-w-2xl px-2 mt-2">
               <div className="bg-white/30 backdrop-blur-md rounded-lg p-2 border-t border-white/10 shadow-xl">
                 <h3 className="text-lg font-medium text-white mb-1">
