@@ -133,7 +133,9 @@ const Modal: React.FC<ModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 overflow-y-auto"
+      className={`fixed inset-0 z-50 bg-black/90 flex items-center justify-center transition-all duration-300 ${
+        fullScreen ? 'p-0 overflow-hidden' : 'p-4 overflow-y-auto'
+      }`}
       onClick={(e) => {
         // Only close if clicking on the background, not on buttons or content
         if (e.target === e.currentTarget) {
@@ -190,23 +192,28 @@ const Modal: React.FC<ModalProps> = ({
 
       {/* Modal Content */}
       <div 
-        className="max-w-5xl w-full flex flex-col items-center my-8"
+        className={`flex flex-col items-center transition-all duration-300 ${
+          fullScreen ? 'w-full h-full' : 'max-w-5xl w-full my-8'
+        }`}
         onClick={(e) => e.stopPropagation()}
-        style={{ margin: fullScreen ? '0' : undefined }}
       >
-        <div className="flex flex-col items-center w-full">
-          <div className="relative w-full flex justify-center">
+        <div className={`flex flex-col items-center ${fullScreen ? 'w-full h-full' : 'w-full'}`}>
+          <div className={`relative flex justify-center ${fullScreen ? 'w-full h-full' : 'w-full'}`}>
             <img
               ref={imgRef}
               src={getCurrentImage()}
               alt={item.name}
               onLoad={handleImageLoad}
-              className="object-contain rounded-lg shadow-2xl transition-all"
+              className={`transition-all duration-300 ${
+                fullScreen 
+                  ? 'object-contain w-full h-full' 
+                  : 'object-contain rounded-lg shadow-2xl'
+              }`}
               style={{
-                maxHeight: imageMaxHeight,
-                maxWidth: '100%',
-                width: 'auto',
-                height: 'auto',
+                maxHeight: fullScreen ? '100vh' : imageMaxHeight,
+                maxWidth: fullScreen ? '100vw' : '100%',
+                width: fullScreen ? '100%' : 'auto',
+                height: fullScreen ? '100%' : 'auto',
                 display: 'block',
                 borderRadius: fullScreen ? '0' : undefined,
                 boxShadow: fullScreen ? 'none' : undefined
